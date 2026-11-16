@@ -1,0 +1,112 @@
+{
+  "schema_version": 3,
+  "channel": "lab",
+  "keyid": "cu-lab-2026-01",
+  "expires": "2026-12-16T03:00:00Z",
+  "version_monotonic": 1,
+  "generated_at": "2026-11-16T03:15:00Z",
+  "publisher": "Henergy / CU Deploy (LAB)",
+  "releases": [
+    {
+      "version": "16.0.0-lab.1",
+      "published_at": "2026-11-16T03:15:00Z",
+      "image": {
+        "ref": "ghcr.io/renlinx-gt/cu-erpnext",
+        "digest": "sha256:cff62c882fe1a928f3df2bce991b03953f82118de9782a92977983054bc2bc29"
+      },
+      "upstream": {
+        "frappe": {
+          "repo": "https://github.com/frappe/frappe",
+          "ref": "v16.55.2",
+          "commit": "1111111111111111111111111111111111111111"
+        },
+        "erpnext": {
+          "repo": "https://github.com/frappe/erpnext",
+          "ref": "v16.54.0",
+          "commit": "2222222222222222222222222222222222222222"
+        },
+        "core_patches": [],
+        "attestation": {
+          "tree_hash": "cff62c882fe1a928f3df2bce991b03953f82118de9782a92977983054bc2bc29",
+          "build_ref": "ghcr.io/renlinx-gt/cu-erpnext:16-20261110-rc4"
+        }
+      },
+      "apps": {
+        "frappe": {
+          "version": "16.55.2",
+          "repo": "https://github.com/frappe/frappe",
+          "commit": "1111111111111111111111111111111111111111"
+        },
+        "erpnext": {
+          "version": "16.54.0",
+          "repo": "https://github.com/frappe/erpnext",
+          "commit": "2222222222222222222222222222222222222222"
+        },
+        "hrms": {
+          "version": "16.53.1",
+          "repo": "https://github.com/frappe/hrms",
+          "commit": "3333333333333333333333333333333333333333"
+        },
+        "crm": {
+          "version": "16.0.2",
+          "repo": "https://github.com/frappe/crm",
+          "commit": "4444444444444444444444444444444444444444"
+        },
+        "helpdesk": {
+          "version": "16.1.0",
+          "repo": "https://github.com/frappe/helpdesk",
+          "commit": "5555555555555555555555555555555555555555"
+        },
+        "cu_gensite": {
+          "version": "0.0.1",
+          "repo": "https://github.com/renlinx-gt/cu_gensite",
+          "commit": "6666666666666666666666666666666666666666"
+        },
+        "cu_fel": {
+          "version": "0.2.0",
+          "repo": "https://github.com/renlinx-gt/cu_fel",
+          "commit": "7777777777777777777777777777777777777777"
+        }
+      },
+      "profiles": {
+        "erp_integral": {
+          "label": "ERP Integral",
+          "apps": ["frappe", "erpnext", "hrms", "crm", "helpdesk", "cu_gensite", "cu_fel"],
+          "install_order": ["frappe", "erpnext", "hrms", "crm", "helpdesk", "cu_gensite", "cu_fel"],
+          "default_mode": "erp_integral"
+        },
+        "contabilidad_fiscal": {
+          "label": "Contabilidad Fiscal",
+          "apps": ["frappe", "erpnext", "cu_gensite", "cu_fel"],
+          "install_order": ["frappe", "erpnext", "cu_gensite", "cu_fel"],
+          "default_mode": "contabilidad_fiscal"
+        }
+      },
+      "compatibility": {
+        "upgrade_from": ["16.0.0-lab.1"],
+        "min_manager_version": "0.3.3",
+        "migration_rules": {
+          "require_test_mirror": true,
+          "require_snapshot_a": true,
+          "require_external_backup": true,
+          "neutralize_test_mirror": true
+        }
+      },
+      "requirements": {
+        "min_ram_mb": 4096,
+        "recommended_ram_mb": 8192,
+        "min_disk_gb": 20,
+        "architectures": ["amd64"]
+      },
+      "host_requirements": {
+        "os": ["ubuntu"],
+        "architectures": ["amd64"],
+        "min_docker_engine": "24.0.0",
+        "min_compose": "2.20.0",
+        "min_ram_mb": 4096,
+        "min_disk_gb": 20
+      },
+      "bundle_sha256": "a2665a53cd129038380c534da4a3533f01db4152e81326d4d13765007bcb0d29"
+    }
+  ]
+}
